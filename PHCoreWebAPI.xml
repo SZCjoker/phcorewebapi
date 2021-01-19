@@ -1,0 +1,773 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PHCoreWebAPI</name>
+    </assembly>
+    <members>
+        <member name="M:PHCoreWebAPI.Application.Account.AccountService.Login(PHCoreWebAPI.Application.Account.Contract.LoginRequest)">
+            <summary>
+            登入  -- 之後改SSO回傳 TOKEN
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="P:PHCoreWebAPI.Application.Auth.IGetJwtTokenInfoService.UserId">
+            <summary>
+            取得JWT內的使用者ID
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.Application.Auth.IGetJwtTokenInfoService.FirstName">
+            <summary>
+            取得JWT內的使用者登入名稱
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.Application.Auth.IGetJwtTokenInfoService.ExpTime">
+             <summary>
+            token 過期時間 
+             </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.Application.Auth.IGetJwtTokenInfoService.SecertKey">
+            <summary>
+            取得JWT內的使用者SecertKey
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.Application.Auth.IGetJwtTokenInfoService.DeptID">
+            <summary>
+            取得部門
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.Application.Common.Paging.PageIndex">
+            <summary>
+            目前頁碼
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.Application.Common.Paging.PageSize">
+            <summary>
+            單頁資料最大筆數
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.Application.Common.Paging.PageCount">
+            <summary>
+            總頁數
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.Application.Common.Paging.Offset">
+            <summary>
+            位移
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.Application.Common.Paging.RowsTotal">
+            <summary>
+            資料總筆數
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:PHCoreWebAPI.Application.Common.StateCodeHandler.PagingRecord``1(System.Collections.Generic.IEnumerable{``0},PHCoreWebAPI.Application.Common.Paging,System.String,System.String)" -->
+        <member name="M:PHCoreWebAPI.Application.DataExport.DataExportService.CopyTemplate(System.String,System.String)">
+            <summary>
+            拷貝EXCEL範本
+            </summary>
+            <param name="source">需要的範本名稱不含附檔名 ex . 2210;response;loginfailed </param>
+            <param name="target">目標路徑 ex .目前先寫死 </param>
+            <returns></returns>
+        </member>
+        <member name="P:PHCoreWebAPI.Application.Issue.Contract.IssueRequest.IssueRecord">
+            <summary>
+            問題紀錄
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.Application.Issue.Contract.IssueRequest.ProcessStatus">
+            <summary>
+            1新建 2處理中 9結案
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.Application.Issue.Contract.IssueRequest.ResponseResult">
+            <summary>
+            處理結果
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.Application.Issue.Contract.IssueResponse.ClientID">
+            <summary>
+            使用者或是客戶ID
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.Application.Issue.Contract.IssueResponse.Device">
+            <summary>
+            客戶使用的終端裝置
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.Application.Issue.Contract.IssueResponse.EntranceType">
+            <summary>
+            發生問題環境  1 PC 2全站 3體育 4H5
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.Application.Issue.Contract.IssueResponse.IssueCateID">
+            <summary>
+            問題種類ID  1 下載問題 2登入 3平台 4閃退 5劫持~~ connection with issueinfo
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.Application.Issue.Contract.IssueResponse.IssueDescription">
+            <summary>
+            問題描述
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.Application.Issue.Contract.IssueResponse.AttachmentNo">
+            <summary>
+            附件ID
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.Application.Issue.Contract.IssueResponse.ProcessStatus">
+            <summary>
+            1新建 2處理中 9結案
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.Application.Issue.Contract.IssueResponse.Reason">
+            <summary>
+            問題發生原因
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.Application.Issue.Contract.IssueResponse.Content">
+            <summary>
+            溝通內容
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.Application.Issue.Contract.IssueResponse.ResponseTime">
+            <summary>
+            回復時間 UTC 秒數
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.Application.Issue.Contract.IssueResponse.ResponseResult">
+            <summary>
+            處理結果
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.Application.Issue.Contract.IssueResponse.EserviceID">
+            <summary>
+            該次電話客服人員
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.Application.Issue.Contract.IssueResponse.Recorder">
+            <summary>
+            紀錄者
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.Application.Issue.Contract.IssueResponse.IssueRecord">
+            <summary>
+            問題紀錄
+            </summary>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.AccountController.Login(PHCoreWebAPI.Application.Account.Contract.LoginRequest)">
+            <summary>
+            登入
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.AccountController.AddUserInfo(PHCoreWebAPI.Application.Account.Contract.CreateUpdateUserRequest)">
+            <summary>
+            新增用戶-含各部門人員
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.AccountController.GetUserInfo">
+            <summary>
+            取得所有使用者
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.AccountController.GetUserInfoByID(System.String)">
+            <summary>
+            依ID取得使用者
+            </summary>
+            <param name="userid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.AccountController.UpdaateUserInfo(PHCoreWebAPI.Application.Account.Contract.CreateUpdateUserRequest)">
+            <summary>
+            編輯使用者資料
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.AccountController.DeleteUserInfo(System.String)">
+            <summary>
+            使用者停權
+            </summary>
+            <param name="userid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.DepositController.Cehck">
+            <summary>
+            測試
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.FileController.Index">
+            <summary>
+            測試
+            </summary>
+            <returns>回傳今日日期</returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.FileController.UploadFile">
+            <summary>
+            單筆上傳
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.IssueController.Check">
+            <summary>
+            CHECK
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.IssueController.AddIssue(PHCoreWebAPI.Application.Issue.Contract.IssueRequest)">
+            <summary>
+            新增紀錄
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.IssueController.GetIssueList(PHCoreWebAPI.Application.Common.PagingRequest)">
+             <summary>
+            取得所有紀錄 
+             </summary>
+             <param name="request">begingdate,enddate,pageoffset,pagesize</param>
+             <remarks>預設區間為本日起往前三天的資料</remarks>
+             <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.IssueController.Ten2Ten(PHCoreWebAPI.Application.Common.PagingRequest)">
+            <summary>
+            pm10 to am10
+            </summary>
+            <param name="request">begingdate,enddate,pageoffset,pagesize</param>
+            <remarks>預設區間為本日起往前三天的資料</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.IssueController.GetLoginFailed(PHCoreWebAPI.Application.Common.PagingRequest)">
+            <summary>
+            無法登入
+            </summary>
+            <param name="request">begingdate,enddate,pageoffset,pagesize</param>
+            <remarks>預設區間為本日起往前三天的資料</remarks> 
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.IssueController.GetIssueListByDept(System.Int32,PHCoreWebAPI.Application.Common.PagingRequest)">
+            <summary>
+            依部門取得紀錄
+            </summary>
+            <param name="deptid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.IssueController.GetIssueByNo(System.Int64)">
+            <summary>
+            依單號取得問題單
+            </summary>
+            <param name="issueno"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.IssueController.UpdateIssue(PHCoreWebAPI.Application.Issue.Contract.IssueRequest)">
+            <summary>
+            編輯紀錄
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.IssueController.IssueStateChange(PHCoreWebAPI.Application.Issue.Contract.IssueRequest)">
+            <summary>
+            更改案件及附件狀態  處理中 送2  結案 9
+            </summary>
+            <param name="recordRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.IssueController.QueryByCondition(PHCoreWebAPI.Application.Issue.Contract.QueryCondition)">
+            <summary>
+            搜尋
+            </summary>
+            <param name="condition"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.IssueController.Print(PHCoreWebAPI.Application.DataExport.Contract.DataCondition)">
+            <summary>
+            下載EXCEL
+            </summary>
+            <param name="condition"></param>
+            <remarks>source=功能名稱字串{response,2210,loginfailed},target可為空,請將功能API相關日期參數
+            一併傳入begindate,enddate,預設區間為本日起往前三天的資料,分頁不用填預設是一千筆資料</remarks> 
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.MailSenderController.Check">
+            <summary>
+            Check
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.MailSenderController.SendMail">
+            <summary>
+            sendmail
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.ManagementController.TieUpIssueDept(System.Collections.Generic.List{PHCoreWebAPI.Application.Setting.Contract.ManagementRequest})">
+            <summary>
+            系統管理 - 綁定問題種類與部門
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.ManagementController.TieUpPermissionDept(System.Collections.Generic.List{PHCoreWebAPI.Application.Setting.Contract.ManagementRequest})">
+            <summary>
+            系統管理 -綁定或更新權限(頁面)與部門
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.ManagementController.AddDept(PHCoreWebAPI.Application.Setting.Contract.ManagementRequest)">
+            <summary>
+            新增部門
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.ManagementController.AddIssueCate(PHCoreWebAPI.Application.Setting.Contract.ManagementRequest)">
+            <summary>
+            新增問題種類
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.ManagementController.AddRecordCate(PHCoreWebAPI.Application.Setting.Contract.ManagementRequest)">
+            <summary>
+            新增 紀錄分類
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.ManagementController.GetDeptList">
+            <summary>
+            取得所有部門清單
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.ManagementController.GetDeptListByID(System.Int32)">
+            <summary>
+            依登入者cookie部門ID取得對應部門
+            </summary>
+            <param name="deptid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.ManagementController.GetIssueList">
+            <summary>
+            取得所有問題種類清單
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.ManagementController.GetIssueListByID(System.Int32)">
+            <summary>
+            依登入者部門取得對應問題種類
+            </summary>
+            <param name="deptid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.ManagementController.GetRecordCateList">
+            <summary>
+            取得所有紀錄種類清單
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.ManagementController.GetRecordCateByDeptID(System.Int32)">
+            <summary>
+            依登入者部門取得對應紀錄種類
+            </summary>
+            <param name="deptid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.ManagementController.UpdateDept(PHCoreWebAPI.Application.Setting.Contract.ManagementRequest)">
+            <summary>
+            編輯部門資料
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.ManagementController.UpdateIssueCate(PHCoreWebAPI.Application.Setting.Contract.ManagementRequest)">
+            <summary>
+            編輯問題種類
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.ManagementController.UpdateRecordCate(PHCoreWebAPI.Application.Setting.Contract.ManagementRequest)">
+            <summary>
+            編輯紀錄種類
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.ManagementController.StopDept(System.Int32,System.Int32)">
+            <summary>
+            刪除部門
+            </summary>
+            <param name="deptid"></param>
+            <param name="state"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.ManagementController.StopIssueCate(System.Int32,System.Int32)">
+            <summary>
+            刪除問題種類
+            </summary>
+            <param name="issuetypeid"></param>
+            <param name="state"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.ManagementController.StopRecordCate(System.Int32,System.Int32)">
+            <summary>
+            刪除紀錄種類
+            </summary>
+            <param name="recordcateid"></param>
+            <param name="state"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.ManagementController.GetVersion">
+            <summary>
+            取得目前版本號
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.PermissionController.AddPermission(System.Int32)">
+            <summary>
+            新增功能權限
+            </summary>
+            <param name="deptid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.PermissionController.GetPermissionByID(System.Int32)">
+            <summary>
+            依ID取得功能權限清單
+            </summary>
+            <param name="deptid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.PermissionController.GetPermissionList">
+            <summary>
+            取得所有功能權限清單
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.PermissionController.UpdatePermission(PHCoreWebAPI.Application.Permission.Contract.PermissionRequest)">
+            <summary>
+            修改功能權限
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.PermissionController.StopPermission(System.Int32)">
+            <summary>
+            停用功能權限
+            </summary>
+            <param name="permissionid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.RecordController.Check">
+            <summary>
+            CHECK
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.RecordController.AddRecord(PHCoreWebAPI.Application.Record.Contract.RecordRequest)">
+            <summary>
+            新增紀錄
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.RecordController.GetRecordList">
+            <summary>
+            取得所有紀錄
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.RecordController.GetRecordListByDept(System.Int32)">
+            <summary>
+            依部門取得紀錄
+            </summary>
+            <param name="deptid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.RecordController.GetRecordByNo(System.Int64)">
+            <summary>
+            依單號取得紀錄單
+            </summary>
+            <param name="Recordno"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.RecordController.UpdateRecord(PHCoreWebAPI.Application.Record.Contract.RecordRequest)">
+            <summary>
+            編輯紀錄
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.RecordController.RecordStateChange(PHCoreWebAPI.Application.Record.Contract.RecordRequest)">
+            <summary>
+            更改案件及附件狀態  處理中 送2  結案 9
+            </summary>
+            <param name="recordRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.RecordController.QueryByCondition(PHCoreWebAPI.Application.Record.Contract.QueryCondition)">
+            <summary>
+            搜尋紀錄
+            </summary>
+            <param name="condition"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.Controllers.ResponseController.Cehck">
+            <summary>
+            測試
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.DAL.Repository.Department.IDeptInfoRepository.GetDeptsByDeptID(System.Int32)">
+            <summary>
+            依ID取得組別
+            </summary>
+            <param name="deptid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.DAL.Repository.Department.IDeptInfoRepository.AddDept(PHCoreWebAPI.Models.DAL.Department.Entity.DeptInfoEntity)">
+            <summary>
+            新增組別分類
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.DAL.Repository.Department.IDeptInfoRepository.UpdateDept(PHCoreWebAPI.Models.DAL.Department.Entity.DeptInfoEntity)">
+            <summary>
+            編輯組別分類
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.DAL.Repository.Department.IDeptInfoRepository.DimissDept(System.Int32,System.Int32)">
+            <summary>
+            停用組別
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.DAL.Repository.IssueCate.IIssueCateRepository.GetIssueCateByDeptID(System.Int32)">
+            <summary>
+            依組別取得問題單種類
+            </summary>
+            <param name="deptid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.DAL.Repository.IssueCate.IIssueCateRepository.AddIssueCate(PHCoreWebAPI.Models.DAL.Repository.IssueCate.Entity.IssueCateEntity)">
+            <summary>
+            新增問題分類
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.DAL.Repository.IssueCate.IIssueCateRepository.UpdateIssueCate(PHCoreWebAPI.Models.DAL.Repository.IssueCate.Entity.IssueCateEntity)">
+            <summary>
+            編輯問題分類
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.DAL.Repository.IssueCate.IIssueCateRepository.StopIssueCate(System.Int32,System.Int32)">
+            <summary>
+            停用分類
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="P:PHCoreWebAPI.DAL.Repository.Issue.Entity.IssueEntity.ClientID">
+            <summary>
+            使用者或是客戶ID
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.DAL.Repository.Issue.Entity.IssueEntity.Device">
+            <summary>
+            客戶使用的終端裝置
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.DAL.Repository.Issue.Entity.IssueEntity.EntranceType">
+            <summary>
+            發生問題環境  1 PC 2全站 3體育 4H5
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.DAL.Repository.Issue.Entity.IssueEntity.IssueCateID">
+            <summary>
+            問題種類ID  1 下載問題 2登入 3平台 4閃退 5劫持~~ connection with issueinfo
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.DAL.Repository.Issue.Entity.IssueEntity.Response">
+            <summary>
+            反饋問題
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.DAL.Repository.Issue.Entity.IssueEntity.IssueDescription">
+            <summary>
+            問題描述
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.DAL.Repository.Issue.Entity.IssueEntity.AttachmentNo">
+            <summary>
+            附件ID
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.DAL.Repository.Issue.Entity.IssueEntity.ProcessStatus">
+            <summary>
+            1新建 2處理中 9結案
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.DAL.Repository.Issue.Entity.IssueEntity.Reason">
+            <summary>
+            問題發生原因
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.DAL.Repository.Issue.Entity.IssueEntity.Content">
+            <summary>
+            溝通內容
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.DAL.Repository.Issue.Entity.IssueEntity.ResponseTime">
+            <summary>
+            回復時間 UTC 秒數
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.DAL.Repository.Issue.Entity.IssueEntity.ResponseResult">
+            <summary>
+            處理結果
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.DAL.Repository.Issue.Entity.IssueEntity.EserviceID">
+            <summary>
+            該次電話客服人員
+            </summary>
+        </member>
+        <member name="P:PHCoreWebAPI.DAL.Repository.Issue.Entity.IssueEntity.Recorder">
+            <summary>
+            紀錄者
+            </summary>
+        </member>
+        <member name="M:PHCoreWebAPI.DAL.Repository.Issue.IIssueRepository.GetIssuePm10toAm10(PHCoreWebAPI.DAL.Repository.Issue.Entity.IssueEntity)">
+            <summary>
+            夜間十點到早上十點 優先處理單
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.DAL.Repository.Issue.IIssueRepository.GetAllIssue(PHCoreWebAPI.DAL.Repository.Issue.Entity.IssueEntity)">
+            <summary>
+            取回全部問題單
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.DAL.Repository.Issue.IIssueRepository.GetAllIssueByDept(System.Int32)">
+            <summary>
+            依照部門取得問題清單
+            </summary>
+            <param name="deptid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.DAL.Repository.Issue.IIssueRepository.GetIssueByclientid(System.String)">
+            <summary>
+            取得單一用戶問題單
+            </summary>
+            <param name="clientid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.DAL.Repository.Issue.IIssueRepository.GetIssueByNo(System.Int64)">
+            <summary>
+            透過單號取得問題單
+            </summary>
+            <param name="issueno"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.DAL.Repository.Issue.IIssueRepository.CreateIssue(PHCoreWebAPI.DAL.Repository.Issue.Entity.IssueEntity)">
+            <summary>
+            新增問題單
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.DAL.Repository.Issue.IIssueRepository.UpdateIssue(PHCoreWebAPI.DAL.Repository.Issue.Entity.IssueEntity)">
+            <summary>
+            編輯問題單
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.DAL.Repository.RecordCate.IRecordCateRepository.GetRecordCateByDeptID(System.Int32)">
+            <summary>
+            依組別取得紀錄單種類
+            </summary>
+            <param name="deptid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.DAL.Repository.RecordCate.IRecordCateRepository.AddRecordCate(PHCoreWebAPI.DAL.Repository.RecordCate.Entity.RecordCateEntity)">
+            <summary>
+            新增紀錄分類
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.DAL.Repository.RecordCate.IRecordCateRepository.UpdateRecordCate(PHCoreWebAPI.DAL.Repository.RecordCate.Entity.RecordCateEntity)">
+            <summary>
+            編輯紀錄分類
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.DAL.Repository.RecordCate.IRecordCateRepository.StopRecordCate(System.Int32,System.Int32)">
+            <summary>
+            停用分類
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.DAL.Repository.Record.IRecordRepository.GetAllRecord">
+            <summary>
+            取回全部紀錄單
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.DAL.Repository.Record.IRecordRepository.GetAllRecordByDept(System.Int32)">
+            <summary>
+            依照部門取得紀錄清單
+            </summary>
+            <param name="deptid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.DAL.Repository.Record.IRecordRepository.GetRecordByclientid(System.String)">
+            <summary>
+            取得單一用戶紀錄單
+            </summary>
+            <param name="clientid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.DAL.Repository.Record.IRecordRepository.GetRecordByNo(System.Int64)">
+            <summary>
+            透過單號取得紀錄單
+            </summary>
+            <param name="Recordno"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.DAL.Repository.Record.IRecordRepository.CreateRecord(PHCoreWebAPI.DAL.Repository.Record.Entity.RecordEntity)">
+            <summary>
+            新增紀錄單
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PHCoreWebAPI.DAL.Repository.Record.IRecordRepository.UpdateRecord(PHCoreWebAPI.DAL.Repository.Record.Entity.RecordEntity)">
+            <summary>
+            編輯紀錄單
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
