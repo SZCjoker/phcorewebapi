@@ -51,7 +51,7 @@ namespace PHCoreWebAPI.DAL.Repository.Account
             try
             {
                 string tSql = $@"INSERT INTO UserInfo(UserID,PWD,DeptID,Gender,FirstName,LastName,FirstCName
-                                                  ,LastCName,Email,Mobile,LoginFailedCount,State)
+                                                  ,LastCName,Email,Mobile,LoginFailedCount,Cdate,Ctime,State)
                                  VALUES
                                                  (@UserID, 
                                                   @PWD,
@@ -63,7 +63,9 @@ namespace PHCoreWebAPI.DAL.Repository.Account
                                                   @LastCName, 
                                                   @Email, 
                                                   @Mobile, 
-                                                  @LoginFailedCount, 
+                                                  @LoginFailedCount,
+                                                  @Cdate,
+                                                  @Ctime,
                                                   @State)";
 
                 using (var cn = await _dbfactory.OpenConnectionAsync())

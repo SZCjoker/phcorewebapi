@@ -23,7 +23,7 @@ namespace PHCoreWebAPI.DAL.Repository.Department
         {
             try
             {
-                string tSql = $@"INSERT INTO IssueInfo(DeptName,State)
+                string tSql = $@"INSERT INTO DeptInfo(DeptName,State)
                                  VALUES(@DeptName,@State)";
 
                 using (var cn = await _dbFactory.OpenConnectionAsync())

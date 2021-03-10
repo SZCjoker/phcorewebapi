@@ -96,7 +96,7 @@ namespace PHCoreWebAPI.DAL.Repository.PermissionInfo
             try
             {
                 string Tsql =$@"SELECT p.PermissionID,dp.DeptID,p.Page,p.PermissionName,p.PermissionPath,
-                                       p.code,dp.orderby,p.State,p.cdate,p.udate
+                                       p.code,p.orderby,p.State,p.cdate,p.udate
 							    FROM Permission p LEFT JOIN deptpermissionmap dp 
 								ON dp.permissionid = p.permissionid  
                                 WHERE dp.deptid = { deptid } AND State = 1

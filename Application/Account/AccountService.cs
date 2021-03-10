@@ -225,21 +225,22 @@ namespace PHCoreWebAPI.Application.Account
             var time = datetime.ToUnixTimeSeconds();
 
             var entity = new UserInfoEntity 
-            { 
-                 UserID = request.UserID,
-                 DeptID = request.DeptID,
-                 PWD =request.PWD,
-                 Gender = request.Gender,
-                 FirstName = request.FirstName,
-                 LastName = request.LastName,
-                 FirstCName = request.FirstCName,
-                 LastCName = request.LastCName,
-                 Email = request.Email,
-                 Mobile = request.Mobile,
-                 Udate = date,
-                 Utime = time,
-                 LoginFailedCount = request.LoginFailedCount,
-                 State = request.State
+            {
+
+                UserID = request.UserID ?? null,
+                DeptID = request.DeptID,
+                PWD = request.PWD ?? null,
+                Gender = request.Gender,
+                FirstName = request.FirstName ?? null,
+                LastName = request.LastName ?? null,
+                FirstCName = request.FirstCName ?? null,
+                LastCName = request.LastCName ?? null,
+                Email = request.Email ?? null,
+                Mobile = request.Mobile ?? null,
+                Udate = date,
+                Utime = time,
+                LoginFailedCount = request.LoginFailedCount,
+                State = request.State
             };
 
             var data = await _repository.UpdateUserInfo(entity);

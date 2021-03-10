@@ -35,7 +35,7 @@ namespace PHCoreWebAPI.Injectionconfigs
 
 
 
-            services.AddScoped<IEmailSenderService, MailSender>();
+            //services.AddScoped<IEmailSenderService, MailSender>();
             services.AddScoped<IManagementService, ManagementService>()
                     .AddScoped<IManagementRepository, ManagementRepository>();
             services.AddScoped<IExportService, DataExportService>();
