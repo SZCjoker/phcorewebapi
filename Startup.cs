@@ -48,11 +48,13 @@ namespace PHCoreWebAPI
                 option.AddPolicy("CorsPolicy", builder =>
                 //builder.WithOrigins("http://localhost:5500",
                 //                    "http://127.0.0.1:5500",
-                //                    "http://10.80.1.23:89")
-                builder.AllowAnyOrigin()
+                //                    "http://192.168.1.104:8080",
+                //                    "http://127.0.0.1:8080",
+                //                    "http://localhost:8080")
+                builder.SetIsOriginAllowed(orign=>true)
                         .AllowAnyHeader()
                         .AllowAnyMethod()
-                        //.AllowCredentials()
+                        .AllowCredentials()
 
 
                 );
@@ -81,7 +83,10 @@ namespace PHCoreWebAPI
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseCors("CorsPolicy");
+            else
+            {
+                app.UseHsts();
+            }
 
             //// Add OpenAPI/Swagger middlewares
             app.UseOpenApi();    // Serves the registered OpenAPI/Swagger documents by default on `/swagger/{documentName}/swagger.json`
@@ -89,7 +94,7 @@ namespace PHCoreWebAPI
             app.UseReDoc(config => { config.Path = "/redoc"; });
 
             app.UseRouting();
-
+            app.UseCors("CorsPolicy");
             app.UseAuthentication();
 
             app.UseAuthorization();
